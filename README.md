@@ -4,7 +4,7 @@ Bienvenido a mi sitio personal. Soy Asesor Comercial especializado en ventas con
 
 ## 🎯 Acceso Rápido
 
-- **Website**: [juanfelipefl orez.github.io](https://juanfelipeflorez.github.io) *(próximamente)*
+- **Website**: [juanfelipefl orez.github.io](https://felipeflorez.github.io) *(próximamente)*
 - **LinkedIn**: [linkedin.com/in/juan-felipe-florez](https://www.linkedin.com/in/juan-felipe-florez)
 - **Email**: felipejffd@gmail.com
 - **Teléfono**: (+57) 302 658 9910
