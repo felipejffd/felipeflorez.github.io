@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Felipe Flórez | Asesor Comercial & Marketing Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #000;
+            --secondary: #666;
+            --light: #f5f5f5;
+            --border: #e0e0e0;
+            --accent: #0070f3;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 48px;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 100;
+        }
+
+        .nav-brand {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--secondary);
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #222;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--light);
+            color: var(--primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: #f0f0f0;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #fff;
+        }
+
+        /* Metrics Section */
+        .metrics {
+            background: var(--light);
+            padding: 80px 48px;
+            margin: 60px 0;
+        }
+
+        .metrics-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .metrics-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 48px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+
+        .metric {
+            border-left: 2px solid var(--accent);
+            padding-left: 24px;
+        }
+
+        .metric-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        /* Experience */
+        .experience {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 48px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            letter-spacing: -0.5px;
+        }
+
+        .experience-item {
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .experience-title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .experience-company {
+            font-size: 14px;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .experience-period {
+            font-size: 14px;
+            color: var(--secondary);
+        }
+
+        .experience-description {
+            color: var(--secondary);
+            line-height: 1.8;
+            margin-top: 12px;
+        }
+
+        /* Skills */
+        .skills {
+            background: var(--light);
+            padding: 80px 48px;
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .skill-card {
+            background: #fff;
+            padding: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .skill-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .skill-description {
+            font-size: 14px;
+            color: var(--secondary);
+        }
+
+        /* CTA Section */
+        .cta {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 80px 48px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 32px;
+            font-weight: 700;
+        }
+
+        .cta p {
+            font-size: 16px;
+            color: var(--secondary);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 48px;
+            text-align: center;
+            color: var(--secondary);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 24px;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px 24px;
+                gap: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-brand">Juan Felipe Flórez</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Asesor Comercial & Estratega de Marketing</h1>
+            <p>Especializado en ventas consultivas, desarrollo de clientes KAM y prospección digital. He liderado negociaciones comerciales en 5 países y he generado resultados medibles en empresas de retail y servicios.</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="document.location='#contacto'">Descargar CV</button>
+                <button class="btn btn-secondary" onclick="window.open('https://www.linkedin.com/in/juan-felipe-florez/', '_blank')">LinkedIn</button>
+            </div>
+        </div>
+        <div class="hero-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+            <img src="profile.jpg" alt="Juan Felipe Flórez" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+        </div>
+    </section>
+
+    <!-- Key Metrics -->
+    <section class="metrics">
+        <div class="metrics-container">
+            <div class="metrics-title">Métricas de Desempeño</div>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric-number">1,133+</div>
+                    <div class="metric-label">Seguidores en LinkedIn & Red Profesional</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">9+ años</div>
+                    <div class="metric-label">Experiencia Comercial Comprobada</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">5 países</div>
+                    <div class="metric-label">Negociaciones Internacionales</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience" id="experiencia">
+        <h2 class="section-title">Trayectoria Profesional</h2>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Líder de Alianzas Empresariales</div>
+                    <div class="experience-company">Campuslands</div>
+                </div>
+                <div class="experience-period">Mayo 2025 - Marzo 2026</div>
+            </div>
+            <p class="experience-description">
+                Lideré el desarrollo y expansión de alianzas estratégicas con empresas nacionales e internacionales. Identifiqué y ejecuté oportunidades de crecimiento comercial, negocié acuerdos de alto valor y coordiné iniciativas de expansión de mercado. Experiencia en diplomacia empresarial y construcción de relaciones de largo plazo.
+            </p>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Director de Ventas</div>
+                    <div class="experience-company">Agencia Reflejo SAS</div>
+                </div>
+                <div class="experience-period">Sept 2024 - Mayo 2025</div>
+            </div>
+            <p class="experience-description">
+                Asumí liderazgo del equipo comercial, dirigiendo prospección multicanal y cierre de acuerdos de alto valor. Implementé estrategias de venta consultiva, optimicé procesos de negociación y supervisé cumplimiento de objetivos de ingresos para toda la región.
+            </p>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Sales Manager</div>
+                    <div class="experience-company">Agencia Reflejo SAS</div>
+                </div>
+                <div class="experience-period">Feb 2022 - Ago 2024</div>
+            </div>
+            <p class="experience-description">
+                Lideré consultorías a la medida para empresas de todos los tamaños. Implementé soluciones en marketing digital, gestioné relaciones comerciales con clientes locales e internacionales, y logré objetivos mensuales consistentes. Experiencia en resolución de PQRS y seguimiento al cliente.
+            </p>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Corredor de Seguros</div>
+                    <div class="experience-company">Agencia Mapfre</div>
+                </div>
+                <div class="experience-period">Feb 2021 - Feb 2022</div>
+            </div>
+            <p class="experience-description">
+                Diseñé y ejecuté embudos de venta especializados. Asesoré en seguros generales y especializados, con atención personalizada al cliente y seguimiento integral de pólizas.
+            </p>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Vendedor Integral</div>
+                    <div class="experience-company">Falabella</div>
+                </div>
+                <div class="experience-period">Feb 2015 - Dic 2020</div>
+            </div>
+            <p class="experience-description">
+                5+ años en el área de tecnología en retail. Desarrollé habilidades de cierre de ventas, manejo de objeciones y servicio al cliente en uno de los mayores retailers de Latinoamérica.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills" id="habilidades">
+        <div class="skills-container">
+            <h2 class="section-title">Competencias Clave</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🎯</div>
+                    <div class="skill-title">Ventas Consultivas</div>
+                    <div class="skill-description">Diagnóstico de necesidades, propuesta de valor y cierre de acuerdos comerciales de alto valor.</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <div class="skill-title">Marketing Digital</div>
+                    <div class="skill-description">Gestión de redes sociales, estrategia digital y prospección online para generación de leads.</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🤝</div>
+                    <div class="skill-title">Relación con Clientes</div>
+                    <div class="skill-description">Gestión KAM, retención de clientes, resolución de conflictos y seguimiento integral.</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🌍</div>
+                    <div class="skill-title">Negociación Internacional</div>
+                    <div class="skill-description">Experiencia en acuerdos comerciales con empresas en Panamá, EEUU, Costa Rica y República Dominicana.</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📈</div>
+                    <div class="skill-title">Gestión de Objetivos</div>
+                    <div class="skill-description">Logro de metas mensuales, presupuestos y KPIs comerciales con seguimiento riguroso.</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💡</div>
+                    <div class="skill-title">Pensamiento Estratégico</div>
+                    <div class="skill-description">Análisis de mercado, identificación de oportunidades y diseño de estrategias de crecimiento.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contacto">
+        <h2>¿Listo para potenciar tu equipo?</h2>
+        <p>Soy especialista en generar resultados comerciales medibles. Conectemos y hablemos sobre cómo puedo aportar valor a tu organización.</p>
+        <div class="hero-cta" style="justify-content: center;">
+            <a href="mailto:felipejffd@gmail.com" class="btn btn-primary">Enviar Email</a>
+            <a href="https://www.linkedin.com/in/juan-felipe-florez/" target="_blank" class="btn btn-secondary">Conectar en LinkedIn</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Juan Felipe Flórez | Asesor Comercial & Marketing Digital | Bucaramanga, Colombia</p>
+    </footer>
+</body>
+</html>
